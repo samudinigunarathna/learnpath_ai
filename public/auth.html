@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnPath AI - Student Authentication</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/unified-auth.css">
+</head>
+
+<body>
+    <script src="js/unified-auth.js"></script>
+    <main class="auth-container">
+
+        <!-- Main Welcome Section -->
+        <section class="auth-welcome">
+
+            <h1>LearnPath AI</h1>
+
+            <p>Your Personal Learning Assistant</p>
+
+            <h2>Welcome to LearnPath AI</h2>
+
+            <p>
+                Choose your student category to access
+                your personalized learning experience.
+            </p>
+
+        </section>
+
+        <!-- Student Category Selection -->
+        <section class="student-selection">
+
+            <!-- School Student -->
+            <div class="student-card">
+
+                <div class="student-icon">🎒</div>
+
+                <h3>School Student</h3>
+
+                <p>Personalized learning for school students.</p>
+
+                <button type="button" class="open-auth" data-category="school">
+                    Continue as School Student
+                </button>
+
+            </div>
+
+            <!-- University Student -->
+            <div class="student-card">
+
+                <div class="student-icon">🎓</div>
+
+                <h3>University Student</h3>
+
+                <p>Smart study planning for university students.</p>
+
+                <button type="button" class="open-auth" data-category="university">
+                    Continue as University Student
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- AUTHENTICATION POPUP -->
+    <div class="auth-modal" id="authModal" hidden>
+
+        <div class="auth-modal-content">
+
+            <button type="button" class="close-modal" id="closeModal">
+                &times;
+            </button>
+
+            <h2 id="modalTitle">Student Authentication</h2>
+
+            <!-- Registration / Login Selection -->
+            <div class="auth-tabs">
+
+                <button type="button" class="auth-tab active" data-mode="register">
+                    Register
+                </button>
+
+                <button type="button" class="auth-tab" data-mode="login">
+                    Login
+                </button>
+
+            </div>
+
+
+            <!-- SCHOOL REGISTRATION FORM -->
+            <form id="schoolRegisterForm" data-auth-form="school-register" hidden>
+
+                <h3>School Student Registration</h3>
+
+                <label for="schoolFullName">Full Name</label>
+                <input type="text" id="schoolFullName" required>
+                <small id="schoolFullNameError"></small>
+
+                <label for="schoolName">School Name</label>
+                <input type="text" id="schoolName" required>
+                <small id="schoolNameError"></small>
+
+                <label for="schoolGrade">Grade</label>
+                <input type="text" id="schoolGrade" required>
+                <small id="schoolGradeError"></small>
+
+                <label for="schoolEmail">Email</label>
+                <input type="email" id="schoolEmail" required>
+                <small id="schoolEmailError"></small>
+
+                <label for="schoolLanguage">Preferred Language</label>
+                <select id="schoolLanguage" required>
+                    <option value="">Select Language</option>
+                    <option value="en">English</option>
+                    <option value="si">Sinhala</option>
+                    <option value="ta">Tamil</option>
+                </select>
+
+                <label for="schoolPassword">Password</label>
+                <input type="password" id="schoolPassword" required>
+                <small id="schoolPasswordError"></small>
+
+                <label for="schoolConfirmPassword">Confirm Password</label>
+                <input type="password" id="schoolConfirmPassword" required>
+                <small id="schoolConfirmPasswordError"></small>
+
+                <label class="terms-label">
+                    <input type="checkbox" id="schoolTerms">
+                    I agree to the Terms and Conditions.
+                </label>
+
+                <small id="schoolTermsError"></small>
+
+                <p class="form-message" id="schoolRegisterMessage"></p>
+
+                <button type="submit">Create School Account</button>
+
+            </form>
+
+
+            <!-- UNIVERSITY REGISTRATION FORM -->
+            <form id="universityRegisterForm" data-auth-form="university-register" hidden>
+
+                <h3>University Student Registration</h3>
+
+                <label for="universityFullName">Full Name</label>
+                <input type="text" id="universityFullName" required>
+                <small id="universityFullNameError"></small>
+
+                <label for="registrationNumber">University Registration Number</label>
+                <input type="text" id="registrationNumber" required>
+                <small id="registrationNumberError"></small>
+
+                <label for="universityEmail">University Email</label>
+                <input type="email" id="universityEmail" required>
+                <small id="universityEmailError"></small>
+
+                <label for="universityName">University</label>
+                <input type="text" id="universityName" required>
+
+                <label for="faculty">Faculty</label>
+                <input type="text" id="faculty" required>
+
+                <label for="degreeProgramme">Degree Programme</label>
+                <input type="text" id="degreeProgramme" required>
+
+                <label for="academicYear">Academic Year</label>
+                <select id="academicYear" required>
+                    <option value="">Select Academic Year</option>
+                    <option value="1">Year 1</option>
+                    <option value="2">Year 2</option>
+                    <option value="3">Year 3</option>
+                    <option value="4">Year 4</option>
+                    <option value="5">Year 5</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="universityLanguage">Preferred Language</label>
+                <select id="universityLanguage" required>
+                    <option value="">Select Language</option>
+                    <option value="en">English</option>
+                    <option value="si">Sinhala</option>
+                    <option value="ta">Tamil</option>
+                </select>
+
+                <label for="universityPassword">Password</label>
+                <input type="password" id="universityPassword" required>
+                <small id="universityPasswordError"></small>
+
+                <label for="universityConfirmPassword">Confirm Password</label>
+                <input type="password" id="universityConfirmPassword" required>
+                <small id="universityConfirmPasswordError"></small>
+
+                <label class="terms-label">
+                    <input type="checkbox" id="universityTerms">
+                    I agree to the Terms and Conditions.
+                </label>
+
+                <p class="form-message" id="universityRegisterMessage"></p>
+
+                <button type="submit">Create University Account</button>
+
+            </form>
+
+
+            <!-- SCHOOL LOGIN FORM -->
+            <form id="schoolLoginForm" data-auth-form="school-login" hidden>
+
+                <h3>School Student Login</h3>
+
+                <label for="schoolLoginEmail">Email</label>
+                <input type="email" id="schoolLoginEmail" required>
+
+                <label for="schoolLoginPassword">Password</label>
+                <input type="password" id="schoolLoginPassword" required>
+
+                <p class="form-message" id="schoolLoginMessage"></p>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+
+            <!-- UNIVERSITY LOGIN FORM -->
+            <form id="universityLoginForm" data-auth-form="university-login" hidden>
+
+                <h3>University Student Login</h3>
+
+                <label for="loginRegistrationNumber">
+                    University Registration Number
+                </label>
+
+                <input type="text" id="loginRegistrationNumber" required>
+
+                <label for="universityLoginEmail">Email</label>
+                <input type="email" id="universityLoginEmail" required>
+
+                <label for="universityLoginPassword">Password</label>
+                <input type="password" id="universityLoginPassword" required>
+
+                <p class="form-message" id="universityLoginMessage"></p>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

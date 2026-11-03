@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Student Registration | LearnPath AI</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js" defer></script>
+</head>
+
+<body>
+
+    <main class="auth-container">
+        <section class="auth-card">
+
+            <div class="auth-header">
+                <h1>LearnPath AI</h1>
+                <h2>Create Your Account</h2>
+                <p>Join LearnPath AI and start your personalized learning journey.</p>
+            </div>
+
+            <form id="registrationForm" data-auth-form="register">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    <small class="error-message" id="fullNameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="schoolName">School Name</label>
+                    <input type="text" id="schoolName" name="schoolName" placeholder="Enter your school name" required>
+                    <small class="error-message" id="schoolNameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="grade">Grade</label>
+                    <input type="text" id="grade" name="grade" placeholder="Example: Grade 10" required>
+                    <small class="error-message" id="gradeError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <small class="error-message" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="language">Preferred Language</label>
+                    <select id="language" name="language" required>
+                        <option value="">Select your language</option>
+                        <option value="en">English</option>
+                        <option value="si">Sinhala</option>
+                        <option value="ta">Tamil</option>
+                    </select>
+                    <small class="error-message" id="languageError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <small class="error-message" id="passwordError"></small>
+                    <small class="input-hint">
+                        8–12 characters, including a letter, number and symbol.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                        placeholder="Re-enter your password" required>
+                    <small class="error-message" id="confirmPasswordError"></small>
+                </div>
+
+                <div class="terms-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        I agree to the Terms and Conditions.
+                    </label>
+                </div>
+                <small class="error-message" id="termsError"></small>
+
+                <button type="submit" class="auth-button">
+                    Create Account
+                </button>
+
+                <p id="formMessage" class="form-message"></p>
+
+            </form>
+
+            <div class="auth-footer">
+                <p>
+                    Already have an account?
+                    <a href="school-login.html">Login here</a>
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
